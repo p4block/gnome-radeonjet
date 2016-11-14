@@ -1,0 +1,17 @@
+#!@PYTHON@
+
+import sys
+import locale
+import gettext
+
+localedir = '@localedir@'
+
+locale.bindtextdomain('radeonjet', localedir)
+locale.textdomain('radeonjet')
+gettext.bindtextdomain('radeonjet', localedir)
+gettext.textdomain('radeonjet')
+
+if __name__ == "__main__":
+    sys.path.insert(1, '@pythondir@')
+    from radeonjet import __main__
+    __main__.main()
